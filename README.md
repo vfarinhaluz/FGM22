@@ -1,24 +1,19 @@
-# Risk classification project
+# Risk classification numerical simulations
+
+## Summary
 This repository contains the code for numerical simulations (under active development) for the paper "Risk Classification in Insurance Markets with Risk and Preference Heterogeneity", 
 by Vitor Farinha Luz, Piero Gottardi and Humberto Moreira.
 
-Code also being developed by:
-- Pedro Melgaré: [pedro_melgare@hotmail.com](mailto:pedro_melgare@hotmail.com)
-- Goh Yeow Chong: [gohyc1993@gmail.com](mailto:gohyc1993@gmail.com)
+Contact: [vitor.farinhaluz@ubc.ca](mailto:vitor.farinhaluz@ubc.ca)
 
-List of changes/outstanding issues
-1. Removing OUTDATEDAVerageCost from Model.m
-2. I do not believe demandArray is being used at all at the moment; should we delete it?
-3. Removing UtilityMatrix, since CARA_UtilityMatrix computes the same object
-4. plotCompareAverageCost were made for debugging purposes, I don't think we should include it in the final version
-5. simulateSignal moved from Solver.m to SignalSimulation.m
-6. updateModelSignal moved from Model.m to SignalSimulation.m
-7. removed QuasiLin_UtilCompareSignal from SignalSimulation.m since it is not being used anywhere
-8. removed demandSize and errorPricePercent from Model.m since they are not being used anywhere
-9. in name of avoiding redundancies, I merged all plotting functions in SignalSimulation.m
+Research assistance by Pedro Melgaré.
 
+---
+## Algorithm description:
 Matlab price iteration:
 
+---
+## Files in repository:
 BaselineEquilibrium.m: 
 This code computes an approximate competitive equilibrium for the two-dimensional
 model discussed in the main paper, allowing for any finite number of contracts and 
