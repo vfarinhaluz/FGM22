@@ -200,10 +200,11 @@ classdef SignalSimulation
         % under the prior distribution with the equilibria after the signal
         % disclousure. It compares prices and welfare. It also plots the
         % signal function.
-        function plotSignalSimulation(signalSimulation,save_indicator)
+        function plotSignalSimulation(signalSimulation,save_indicator, textTitle)
             arguments
                 signalSimulation SignalSimulation
-                save_indicator = 0;                
+                save_indicator = 0
+                textTitle = ""
             end
 
             % Load model parameters
@@ -323,14 +324,15 @@ classdef SignalSimulation
             plot(riskSetGraph,EVL);
             plot(riskSetGraph,EVH);
             xlim([0.9*muL 1.05*muH])
+            ylim([-0.02 0.14])
             hold off;
             legend('\rho_{L}','\rho_{H}');
             xlabel('Risk level (\mu)');
             ylabel('Equivalent variation');
-            title('Equivalent variation of signal disclosure:');
+            title("Equivalent variation of signal disclosure" + textTitle);
 
             %% Saving plots
-            if nargin == 2 && save_indicator==1
+            if nargin >1 && save_indicator==1
                  saveas(pricesPlot,'figures/plotPrices.pdf')
                  saveas(pricePerUnitPlot,'figures/plotPricesPerUnit.pdf')
                  saveas(signalFunctionPlot,'figures/signalFunctionPlot.pdf')
