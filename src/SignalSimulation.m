@@ -324,7 +324,6 @@ classdef SignalSimulation
             plot(riskSetGraph,EVL);
             plot(riskSetGraph,EVH);
             xlim([0.9*muL 1.05*muH])
-            ylim([-0.02 0.14])
             hold off;
             legend('\rho_{L}','\rho_{H}');
             xlabel('Risk level (\mu)');
