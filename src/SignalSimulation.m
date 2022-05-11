@@ -124,11 +124,12 @@ classdef SignalSimulation
         % display 1. the error term in the iteration algorithm, 2. the
         % mass of consumers with interim improvement, and 3. the aggregate
         % welfare effect of the signal disclousure
-        function [p1, p2, p3] = plotHeatMapsDeltaRho0(signalSimulationArray, save_indicator)            
+        function [p1, p2, p3] = plotHeatMapsDeltaRho0(signalSimulationArray, save_indicator, titleDescription)            
 
             arguments
                 signalSimulationArray SignalSimulation
-                save_indicator = 0;                
+                save_indicator = 0
+                titleDescription = ""
             end
             
             results = tableGridSimulation(signalSimulationArray);
@@ -141,7 +142,7 @@ classdef SignalSimulation
             figure;
             p2=heatmap(results,"rho0","delta_percent","ColorVariable","shareWelfare","Colormap",autumn,...
                 CellLabelFormat = '%.1g',FontSize=14);
-            title('Mass with interim improvement');
+            title("Mass with interim improvement " + titleDescription);
             xlabel('\rho_{0}');
             
             ylabel('\delta/\rho_{0}'); %,'Interpreter','latex')
