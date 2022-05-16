@@ -12,21 +12,21 @@ Matlab research assistance by Pedro Melgaré.
 
 ## Algorithm description:
 
-An equilibrium in the model is constituted of a price function $p(\cdot)$ and an allocation which maps from the set of types to coverage levels (the paper often uses the inverse mapping, which is a type assignment function).
-A type contains both risk ($\mu$) and risk aversion ($\rho$). The algorithm uses a finite grid $\hat{\Theta} \subset \mathbb{R}^{2}_{++}$ as the set of possible types.
+An equilibrium in the model is constituted of a price function **p()** and an allocation which maps from the set of types to coverage levels (the paper often uses the inverse mapping, which is a type assignment function).
+A type contains both risk (mu) and risk aversion (rho). The algorithm uses a finite grid as the set of possible types.
 
 The algorithm starts from a initial guessed price function and iterates a properly defined operator until convergence is achieved, which represents that an approximate equilibrium has been found.
 
-More precisely, for a given price function $p_{t}$, the algorithm calculates the optimal coverage  level for each type $t_{p_{t}}:\hat{\Theta}\mapsto\left[0,1\right]$ and defines a new price function  $\tilde{p}$ as follows:
+More precisely, for a given price function p_t, the algorithm calculates the optimal coverage level for each type and defines a new price function  p' as follows:
 
-1. For each contract traded under $p_{t}$, the new price $\tilde{p}$ is updated towards  the average risk of agents purchasing it. 
-2. The price for each non-traded contract $x'$ is also updated,  but on the basis of the riskiness of the type $\left(\mu^+, \rho^+ \right)$ most willing to pay for it.
+1. For each contract traded under p_t, the new price p' is updated towards  the average risk of agents purchasing it. 
+2. The price for each non-traded contract x' is also updated,  but on the basis of the riskiness of the type most willing to pay for it.
 
-The new price $p_{t+1}$ is given by 
-$$
-p_{t+1} = p_{t} + \alpha (\tilde{p} - p_{t}),
-$$
-for some parameter $\alpha \in (0,1)$ (this parameter is chosen to make sure prices don't fluctuate too much in each step but still converge).
+The new price p_(t+1) is given by 
+
+p_(t+1) = p_t + alpha (p' - p_t),
+
+for some parameter alpha in (0,1) (this parameter is chosen to make sure prices don't fluctuate too much in each step but still converge).
 
 The simulation results are reported in Section 5.5 of the main paper, and Section 1 of the online appendix.
 
@@ -47,10 +47,10 @@ finite number of contracts and possible type realizations in each dimension.
 ### SignalAnalysisGridRhoDelta.m:
 
 This code creates a grid varying the following parameters of the model:
-- $\delta$: the variation in risk aversion
-- $\rho_0$ : the mid-point of the risk aversion range
+- delta: the variation in risk aversion
+- rho_0 : the mid-point of the risk aversion range
 
-For each pair of $\delta$ and $\rho_0$, the code simulates the effect of signal
+For each pair of delta and rho_0, the code simulates the effect of signal
 disclosure and stores all the simulated data into a large Signal Simulation
 array object.
 
@@ -62,8 +62,8 @@ the signal disclosure.
 ### SignalAnalysisGridRhoRisk.m:
 
 This code creates a grid varying the following:
-- $\delta$: the variation in risk aversion
-- $\Delta \mu = \mu_H - \mu_L$ : the variation in risk levels
+- delta: the variation in risk aversion
+- (mu_H - mu_L) : the variation in risk levels
 
 For each pair of deltaRisk and delta, the code simulates the effect of signal
 disclosure and stores all the simulated data into a large Signal Simulation
