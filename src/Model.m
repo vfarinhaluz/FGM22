@@ -201,7 +201,7 @@ classdef Model
             hold off;
 
             if save_indicator==1
-                f=fullfile('../figures','DistributionPlot.pdf');
+                f=fullfile('./figures','DistributionPlot.pdf');
                 saveas(fig,f);
             end
         end

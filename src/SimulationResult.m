@@ -169,7 +169,7 @@ classdef SimulationResult
             hold off;
 
             if save_indicator==1
-            f=fullfile('/figures','SimuTypeAssign.pdf');
+            f=fullfile('./figures','SimuTypeAssign.pdf');
             saveas(fig,f);
             end
 
