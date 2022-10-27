@@ -8,6 +8,9 @@ Contact: [vitor.farinhaluz@ubc.ca](mailto:vitor.farinhaluz@ubc.ca)
 
 Matlab research assistance by Pedro Melgaré.
 
+This code can also be accessed at:
+[https://github.com/vfarinhaluz/FGM22](https://github.com/vfarinhaluz/FGM22)
+
 ---
 
 ## Algorithm description:
