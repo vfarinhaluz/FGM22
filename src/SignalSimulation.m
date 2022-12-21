@@ -124,11 +124,12 @@ classdef SignalSimulation
         % display 1. the error term in the iteration algorithm, 2. the
         % mass of consumers with interim improvement, and 3. the aggregate
         % welfare effect of the signal disclousure
-        function [p1, p2, p3] = plotHeatMapsDeltaRho0(signalSimulationArray, save_indicator, titleDescription)            
+        function [p1, p2, p3] = plotHeatMapsDeltaRho0(signalSimulationArray, save_indicator, prefix, titleDescription)            
 
             arguments
                 signalSimulationArray SignalSimulation
                 save_indicator = 0
+                prefix = ""
                 titleDescription = ""
             end
             
@@ -150,11 +151,11 @@ classdef SignalSimulation
             p3=heatmap(results,"rho0","delta_percent","ColorVariable","AggregateWelfSignal","Colormap",autumn,...
                 CellLabelFormat = '%.2E',FontSize=14,Title="Aggregate welfare gain from signal");
             title('Signal aggregate welfare effect');
-            
+
            if save_indicator
-            saveas(p1,'figures/HeatmapErrors.pdf');
-            saveas(p2,'figures/HeatmapWelfare.pdf');
-            saveas(p3,'figures/HeatmapAggWelfare.pdf');
+            saveas(p1,"figures/"+prefix+"HeatmapErrors.pdf");
+            saveas(p2,"figures/"+prefix+"HeatmapWelfare.pdf");
+            saveas(p3,"figures/"+prefix+"HeatmapAggWelfare.pdf");
            end        
         end
     
