@@ -40,8 +40,6 @@ Figure 5: 10 hours (5 hours for each subplot)
 
 ## Description of reproduction steps ##
 
----
-
 #### Code ####
 
 To replicate Figure 3, run BaselineSignalAnalysis.m
